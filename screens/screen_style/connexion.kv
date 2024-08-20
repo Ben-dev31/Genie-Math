@@ -1,0 +1,123 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+<ConnexionScreen>
+    MDBoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1,.3
+            canvas.before:
+                Color:
+                    rgba:1,1,1,1
+
+                Rectangle:
+                    pos: self.pos 
+                    size: self.size 
+                    source: root.background_image
+        MDFloatLayout:
+            MDRelativeLayout:
+                size_hint: .7, 1
+                pos_hint: {'center_x': 0.5}
+                
+                MDLabel:
+                    text: "Connexion"
+                    color:get_color_from_hex("#eea41c")
+                    pos_hint: {'center_x': 0.5,'center_y': 0.8}
+                
+                MDTextField:
+                    id: us_login
+                    hint_text:"Nom d'utilisateur"
+                    pos_hint: {'center_x': 0.5,'center_y': 0.7}
+                    required: True
+                    multiline: False
+                    mode: "rectangle"
+                    on_focus: root.menu_open(self)
+
+                MDTextField:
+                    id: us_password
+                    hint_text:"Mot de passe"
+                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                    mode: "rectangle"
+                    multiline: False
+                    password: True
+                    on_text_validate: root.connect()
+
+                MDRoundFlatButton:
+                    text: "Connecter"
+                    color: 'teal'
+                    pos_hint:{'center_x':0.8, 'center_y':0.3}
+                    on_press: root.connect()
+
+
+<SignIn>
+    login: login
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            size_hint: 1,.1
+            id: topBar_setting
+            title: "Création de compte"
+            left_action_items:[['keyboard-backspace',lambda x: root.back_screen(x)]]
+            
+        MDFloatLayout:
+            MDRelativeLayout:
+                size_hint: .7, 1
+                pos_hint: {'center_x': 0.5}
+                
+                MDLabel:
+                    text: "Nouvelle utilisateur"
+                    color:get_color_from_hex("#eea41c")
+                    pos_hint: {'center_x': 0.5,'center_y': 0.95}
+                MDTextField:
+                    id: us_name
+                    hint_text:"Nom"
+                    pos_hint: {'center_x': 0.5,'center_y': 0.85}
+                    multiline: False
+                    mode: "rectangle"
+                    on_text: 
+                        login.text = (login.text.split()[0] +' '+ self.text.upper()) if len(login.text.split()) >=1 else self.text.upper()
+                        
+                MDTextField:
+                    id:us_frist_name
+                    hint_text:"Prénom"
+                    pos_hint: {'center_x': 0.5,'center_y': 0.72}
+                    
+                    multiline: False
+                    mode: "rectangle"
+                    on_text:
+                        login.text = (self.text.capitalize()+ ' ' + login.text.split()[-1]) if len(login.text.split()) >=1 else self.text.capitalize()
+
+                MDTextField:
+                    id: us_levels
+                    hint_text:"Niveau d'étude"
+                    pos_hint: {'center_x': 0.5,'center_y': 0.59}
+                    multiline: False
+                    mode: "rectangle"
+                MDTextField:
+                    id: login
+                    hint_text:"Nom d'utilisateur"
+                    helper_text: "le nom d'utilisateur est obligatoir"
+                    pos_hint: {'center_x': 0.5,'center_y': 0.46}
+                    required: True
+                    multiline: False
+                    mode: "rectangle"
+                MDTextField:
+                    id: us_password
+                    hint_text:"Mot de passe"
+                    helper_text: "le mot de passe est facultatif"
+                    pos_hint: {'center_x': 0.5,'center_y': 0.33}
+                    mode: "rectangle"
+                    multiline: False
+                    password: True
+                MDTextField:
+                    id: us_password_conf
+                    hint_text:"Confirmer le mot de passe"
+                    pos_hint: {'center_x': 0.5,'center_y': 0.2}
+                    mode: "rectangle"
+                    multiline: False
+                    password: True
+                MDRoundFlatButton:
+                    text: "Continuer"
+                    color: 'teal'
+                    pos_hint:{'center_x':0.8, 'center_y':0.07}
+                    on_press: root.create_user()
+

@@ -1,0 +1,85 @@
+
+
+<SelectionBox>
+    size_hint_x: None
+    size_hint_y: None
+    height: dp(root.box_size[0])
+    width: dp(root.box_size[1])
+    padding: 10,0,10,0
+    on_leave:
+        self.md_bg_color:'teal'
+    on_enter:
+        self.md_bg_color:"#daf017"
+
+    MDCard:
+        id:card
+        md_bg_color:'teal'
+        style: 'elevated'
+        shadow_offset:(0, -1)
+        line_color: (0.2, 0.2, 0.2, 0.8)
+        on_release: root.press_function(root)
+
+        MDRelativeLayout:
+            id: contener
+            size_hint:.98, .98
+            FitImage:
+                source: root.image
+                size_hint:.98, .5
+                pos_hint: {"top": 0.98, "center_x": .5}
+
+            MDIconButton:
+                icon: "dots-vertical"
+                pos_hint: {"top": 1, "right": 1}
+
+            MDLabel:
+                text: root.title
+                adaptive_size: True
+                color: "black"
+                style: "H1"
+                halign: 'left'
+                pos_hint: {"top": .4, "center_x": .5}
+                bold: True
+            MDLabel:
+                text: root.text
+                adaptive_size: True
+                color: "grey"
+                halign: 'left'
+                pos_hint: {"top": .2, "center_x": .5}
+                bold: True
+
+
+<SelectionOne>
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        MDTopAppBar:
+            size_hint: 1,.1
+            title: "Parcours"
+            left_action_items:[['keyboard-backspace',lambda x: root.back_screen(x)]]
+
+        MDScrollView:
+            do_scroll_x: False 
+            do_scroll_y: True 
+            MDStackLayout:
+                id:widget_one
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 10
+
+<SelectionTow>
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        MDTopAppBar:
+            size_hint: 1,.1
+            title: "Parcours"
+            left_action_items:[['keyboard-backspace',lambda x: root.back_screen(x)]]
+
+        MDScrollView:
+            do_scroll_x: False 
+            do_scroll_y: True 
+            MDStackLayout:
+                id: widget_two
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 10
