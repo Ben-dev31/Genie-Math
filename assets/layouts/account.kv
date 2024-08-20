@@ -1,0 +1,172 @@
+
+<Account>
+    MDBoxLayout:
+        orientation:'vertical'
+        spacing: 10
+        MDTopAppBar:
+            size_hint: 1,.1
+            id: topBar_setting
+            title: "Compte"
+            left_action_items:[['keyboard-backspace',lambda x: root.back_screen(x)]]
+            right_action_items:[['content-save',lambda x: root.save_all(x)]]
+        MDLabel:
+            id:error_massage
+            color: 'red'
+            font_size: 18
+            halign: "center"
+            size_hint_y: None
+            height: '0dp'
+        MDScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing: 10
+                adaptive_height:True
+                
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    adaptive_height:True
+                    MDLabel:
+                        text: "Informations Personnelles"
+                        halign: 'center'
+                        color: 'teal'
+                        font_size: 18
+                        adaptive_height: True
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        adaptive_height:True
+                        padding:10
+                        MDRelativeLayout:
+                            pos_hint: {"x": .01, "top": 1}
+                            size_hint_x: None 
+                            width: "150dp"
+                            adaptive_height:True
+                            MDCard:
+                                radius: 100
+                                pos_hint: {"center_x": .4, "top": .93}
+                                size_hint: None, None 
+                                size: '90dp','90dp'
+
+                                FitImage:
+                                    source: root.us_profil_image
+                                    pos_hint: {"top": 1}
+                                    radius: 100
+                            
+                            MDIconButton:
+                                icon: 'pencil'
+                                pos_hint:{"top":.5,"center_x":.8}
+                                on_release: root.profil_change()
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            adaptive_height:True
+                            spacing: 20
+                            padding: 10
+                            MDLabel:
+                                text: root.us_login
+                                pos_hint:{"top":0.2,"center_x":.5}
+                                halign: 'center'
+                                adaptive_height: True
+                            MDRoundFlatButton:
+                                text: "créer un compte"
+                                on_release: root.create_new()
+
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        spacing:10
+                        padding: 10
+                        adaptive_height:True
+                        MDTextField:
+                            id: us_name
+                            hint_text:"Nom"
+                            text:root.user_name
+                            multiline: False
+                            mode: "rectangle"
+                            font_size: 12
+                            on_text:
+                                root.user_name = self.text
+                            
+                        MDTextField:
+                            id:us_frist_name
+                            hint_text:"Prénom"
+                            text: root.user_frist_name
+                            font_size: 12
+                            multiline: False
+                            mode: "rectangle"
+                            on_text:
+                                root.user_frist_name = self.text
+                        
+                        MDTextField:
+                            id: us_levels
+                            hint_text:"Niveau d'étude"
+                            text: root.us_level
+                            multiline: False
+                            mode: "rectangle"
+                            font_size: 12
+                            on_text:
+                                root.us_level = self.text
+                        MDTextField:
+                            id: login
+                            hint_text:"Nom d'utilisateur"
+                            text: root.us_login
+                            required: True
+                            multiline: False
+                            mode: "rectangle"
+                            font_size: 12
+                            on_text:
+                                root.us_login = self.text
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    adaptive_height:True
+                    
+                    padding: 10
+                    MDBoxLayout:
+                        orientation: "vertical"
+                        adaptive_height: True
+                        spacing: 10
+                        MDLabel:
+                            text: "Parametre du compte"
+                            halign:"center"
+                            color: "teal"
+                            adaptive_height: True
+                            font_size: 18
+                        MDLabel:
+                            text: "Modiffier le mot de passe"
+                            halign:"left"
+                            color: "black"
+                            adaptive_height: True
+                            font_size: 14
+                        MDTextField:
+                            id: ls_us_password
+                            hint_text:"Mot de passe"
+                            font_size: 14
+                            mode: "rectangle"
+                            multiline: False
+                            password: True
+                        MDTextField:
+                            id: new_us_password
+                            hint_text:"nouveau Mot de passe"
+                            font_size: 14
+                            mode: "rectangle"
+                            multiline: False
+                            password: True
+                        
+                        MDBoxLayout:
+                            orientation: 'horizontal'
+                            adaptive_height: True
+                            padding: 10
+                            MDLabel:
+                                text: "Activer la connection automatique"
+                                halign:"left"
+                                color: "black"
+                                font_size: 14
+                            MDIconButton:
+                                id: auto_conn
+                                icon: "checkbox-blank-circle-outline" if root.us_auto_connect else "check-circle-outline" 
+                                halign: 'right'
+                                on_press:
+                                    self.icon = "checkbox-blank-circle-outline" if self.icon == "check-circle-outline" else "check-circle-outline"
+
+                                on_release:
+                                    root.us_auto_connect = not root.us_auto_connect
+                        

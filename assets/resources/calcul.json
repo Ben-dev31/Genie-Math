@@ -1,0 +1,387 @@
+{
+    "Addition": {
+        "operator":["+"],
+        "Niveau 1":{
+            "lim": 20,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 5
+        },
+        "Niveau 2":{
+            "lim": 100,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 5
+        },
+        "Niveau 3":{
+            "lim": 20,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 4":{
+            "lim": 100,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 5":{
+            "lim": 1000,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 6":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 7":{
+            "lim": 1000,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 3,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 8":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 3,
+            "point": 3,
+            "points": 150,
+            "exos": 50
+        },
+        "Niveau 9":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 4,
+            "point": 5,
+            "points": 150,
+            "exos": 25
+        },
+        "Niveau 10":{
+            "lim": 2000,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 4,
+            "point": 5,
+            "points": 250,
+            "exos": 50
+        }
+        
+    },
+    "Soustraction": {
+        "operator":["-"],
+        "Niveau 1":{
+            "lim": 20,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 2":{
+            "lim": 100,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 3":{
+            "lim": 20,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 4":{
+            "lim": 100,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 5":{
+            "lim": 1000,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 6":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 7":{
+            "lim": 1000,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 3,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 8":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": true,
+            "nb_operande": 3,
+            "point": 3,
+            "points": 150,
+            "exos": 50
+        },
+        "Niveau 9":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": true,
+            "nb_operande": 4,
+            "point": 5,
+            "points": 150,
+            "exos": 25
+        },
+        "Niveau 10":{
+            "lim": 2000,
+            "use_int": false,
+            "use_neg": true,
+            "nb_operande": 4,
+            "point": 5,
+            "points": 250,
+            "exos": 50
+        }
+    },
+    "Multiplication": {
+        "operator":["*"],
+        "Niveau 1":{
+            "lim": 20,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 2":{
+            "lim": 100,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 3":{
+            "lim": 20,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 4":{
+            "lim": 100,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 5":{
+            "lim": 1000,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 6":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 7":{
+            "lim": 1000,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 3,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 8":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": true,
+            "nb_operande": 3,
+            "point": 3,
+            "points": 150,
+            "exos": 50
+        },
+        "Niveau 9":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": true,
+            "nb_operande": 4,
+            "point": 5,
+            "points": 150,
+            "exos": 25
+        },
+        "Niveau 10":{
+            "lim": 2000,
+            "use_int": false,
+            "use_neg": true,
+            "nb_operande": 4,
+            "point": 5,
+            "points": 250,
+            "exos": 50
+        }
+    },
+    "Division": {
+        "operator":["/"],
+        "Niveau 1":{
+            "lim": 20,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 2":{
+            "lim": 100,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 3":{
+            "lim": 20,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 4":{
+            "lim": 100,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 5":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 6":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": true,
+            "nb_operande": 2,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 7":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": true,
+            "nb_operande": 3,
+            "point": 2,
+            "points": 100,
+            "exos": 50
+        },
+        "Niveau 8":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": true,
+            "nb_operande": 3,
+            "point": 3,
+            "points": 150,
+            "exos": 50
+        },
+        "Niveau 9":{
+            "lim": 1000,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 4,
+            "point": 5,
+            "points": 150,
+            "exos": 25
+        },
+        "Niveau 10":{
+            "lim": 2000,
+            "use_int": false,
+            "use_neg": false,
+            "nb_operande": 4,
+            "point": 5,
+            "points": 250,
+            "exos": 50
+        }
+    },
+    "Puissance": {
+        "operator":["**"],
+        "Niveau 1":{
+            "lim": 5,
+            "use_int": true,
+            "use_neg": false,
+            "nb_operande": 2,
+            "point": 3,
+            "points": 100,
+            "exos": 50
+        }
+    }
+}

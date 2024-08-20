@@ -1,0 +1,102 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+<GameScreen>
+    MDBoxLayout:
+        orientation:'vertical' 
+        MDTopAppBar:
+            size_hint: 1,.1
+            id: topBar
+            left_action_items:[['keyboard-backspace',lambda x: root.back_screen(x)]]
+            right_action_items:[['dots-vertical',lambda x: root.menue(x)]]
+
+        MDFloatLayout:
+            md_bg_color:get_color_from_hex("#393636c8") if app.theme_cls.theme_style == 'Light' else get_color_from_hex('#181818')
+            
+            MDBoxLayout:
+                id:g_contener
+                orientation:'vertical'
+                md_bg_color: get_color_from_hex('#c3c8cd') if app.theme_cls.theme_style == 'Light' else get_color_from_hex('#323434fd')
+                size_hint: .93,.9
+                pos_hint:{'center_x':.5, 'center_y':.5}
+                spacing:5
+                radius:10,10,10,10
+
+                MDBoxLayout:
+                    id: g_header
+                    size_hint: 1,.3
+                    padding:10
+                    MDGridLayout:
+                        cols:2
+                        rows:3
+                        spacing:10
+                        MDLabel:
+                            text:f"Progression: {root.exercice}/{root.total_exos}"
+                            halign:'left'
+                        MDLabel:
+                            text:f"Niveau: {root.niveau}"
+                            halign:'center'
+                        MDProgressBar:
+                            id:progression
+                            max: int(root.total_exos)
+                            value:root.progression
+                        MDLabel:
+                            text:f"Points: {root.points}"
+                            halign:'center'
+                        MDLabel:
+                        MDLabel:
+                            text:f"Exercice: {root.exercice} "
+                            halign:'center'
+                MDBoxLayout:
+                    size_hint_x:1
+                    size_hint_y: None
+                    height:5
+                    md_bg_color:get_color_from_hex('#ffffff') if app.theme_cls.theme_style == 'Light' else get_color_from_hex('#252525')
+                MDBoxLayout:
+                    size_hint: 1,.3
+                    md_bg_color: get_color_from_hex('#d0cfcf') if app.theme_cls.theme_style == 'Light' else get_color_from_hex('#444444fd')
+                    MDLabel:
+                        id:operation
+                        halign:"center"
+                        valign:"center"
+                        font_size:26
+                MDBoxLayout:
+                    id: g_home
+                    orientation:'vertical'
+                    spacing: 20
+                    padding:10
+                    MDFillRoundFlatButton:
+                        id:bt1
+                        text:'24'
+                        size_hint_x:1
+                        font_size:18
+                        md_bg_color: get_color_from_hex("#516d4c")
+                        on_press: root.selection_button(self)
+                    MDFillRoundFlatButton:
+                        id:bt2
+                        text:'32'
+                        size_hint_x:1
+                        font_size:18
+                        md_bg_color: get_color_from_hex("#516d4c")
+                        on_press: root.selection_button(self)
+                    MDFillRoundFlatButton:
+                        id:bt3
+                        text:'54'
+                        size_hint_x:1
+                        font_size:18
+                        md_bg_color: get_color_from_hex("#516d4c")
+                        on_press: root.selection_button(self)
+                    MDFillRoundFlatButton:
+                        id:bt4
+                        text:'02'
+                        size_hint_x:1
+                        font_size:18
+                        md_bg_color: get_color_from_hex("#516d4c")
+                        on_press: root.selection_button(self)
+                        
+                    MDFloatLayout:
+                        MDFillRoundFlatButton:
+                            id: check_go
+                            text:"vérifier"
+                            pos_hint: {'center_x':.85, 'center_y':.33}
+                            md_bg_color: get_color_from_hex("#6d7172")
+                            on_press: root.check(self)
+                

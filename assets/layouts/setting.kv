@@ -1,0 +1,86 @@
+
+<Setting>
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            size_hint: 1,.1
+            id: topBar_setting
+            title: "Parametre"
+            left_action_items:[['keyboard-backspace',lambda x: root.back_screen(x)]]
+
+        MDScrollView:
+            do_scroll_x: False 
+            do_scroll_y: True 
+            MDBoxLayout:
+                orientation:'vertical'
+                adaptive_height: True
+                MDRelativeLayout:
+                    id:setting_contener
+                    orientation:'vertical' 
+                    adaptive_height: True
+                    size_hint_x: .95
+                    padding: 10,0,10,0
+                    spacing:5
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        adaptive_height: True
+                        MDLabel:
+                            text:"Application"
+                            font_size: 18
+                            color: 'teal'
+                            halign:"center"
+                            valign:"top"
+                            adaptive_height:True
+                            pos_hint: {'top':.98}
+                        
+                        MDGridLayout:
+                            cols:3
+                            spacing:10
+                            adaptive_height:True
+                            pos_hint: {'top':.9}
+                            
+                            MDLabel:
+                                text:"Theme"
+                                font_size: 18
+                                halign:"left"
+                                valign:"top"
+                                adaptive_height:True
+                            MDRoundFlatIconButton:
+                                id:light_bt
+                                text:"Claire"
+                                icon:"check-circle-outline" if app.theme_cls.theme_style == "Light" else "checkbox-blank-circle-outline"
+                                line_color: get_color_from_hex("#6d717200")
+                                text_color: get_color_from_hex("#08938cfd")
+                                text_size: 18
+
+                                on_release:
+                                    app.theme="Light"
+
+                            MDRoundFlatIconButton:
+                                id:dark_bt
+                                text:"Sombre"
+                                icon:"checkbox-blank-circle-outline" if app.theme_cls.theme_style != "Dark" else "check-circle-outline"
+                                line_color: get_color_from_hex("#6d717200")
+                                text_color: get_color_from_hex("#08938cfd")
+                                text_size: 18
+                                on_release:
+                                    app.theme="Dark"
+                    MDBoxLayout:
+                        orientation:'vertical'
+                        pos_hint: {'top':.01}
+                        MDBoxLayout:
+                            orientation:'horizontal'
+                            adaptive_height:True
+                            MDLabel:
+                                text:"[u]Version : [/u]"
+                                font_size:20
+                                adaptive_height:True
+                                markup:True
+                                halign:'center'
+                            MDLabel:
+                                text:app.version
+                                font_size:20
+                                color:get_color_from_hex('#616768f7')
+                                adaptive_height:True
+                                halign:'center'
+
